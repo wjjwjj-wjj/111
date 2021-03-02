@@ -1,0 +1,158 @@
+这周作业:
+工具:
+
+git 代码版本管理
+webpack
+less
+sass
+
+心理准备:
+ 命令行
+通过命令来操作程序.
+
+GUI: 程序界面
+命名行: 通过代码来控制程序.
+
+
+相对路径: ..   .
+
+命令:
+DOS命令工具:
+cd 命令 进入文件夹  
+    cd C: 进入C盘    cd D: 进入D盘    cd C:\gz2077\page 进入 C盘下面的gz2077文件夹下面的page文件夹
+dir 命令 列出当前文件夹里面的所有列表 
+notepad 笔记.txt 用记事本打开 笔记.txt  (notepad 是记事本程序名称 [notepad.exe])
+
+git:
+Git 代码版本管理工具;
+作用: 记录代码代码修改记录 [版本] , 可以方便多人协作.
+Linux操作系统 创始人 linus  管理Linux源代码.
+其他版本管理工具: svn
+git是一个版本控制系统(VCS  version control system):
+
+git bash:
+bash 就是Linux 脚本命令行
+ll 列出当前文件夹里面的所有文件列表  相当于dos里面dir
+window 里面命令行 DOS
+
+文件存储的位置[虚拟位置]概念:
+工作区:  被Git管理的项目目录  在硬盘上的文件 [可以加入到暂存区]
+暂存区:  临时存放被修改文件	[最终可以提交到 版本库]
+版本库:  用于存放提交记录[ 暂存区的内容可以提交到 版本库]	
+
+1).配置:
+git config --global user.name 用户名称  全局
+git config --global user.email email邮件地址 全局
+git config --list  查看配置列表 全局
+修改配置: 重复执行上面的命令
+
+2).操作流程
+git init 初始化git库   .git/ 文件夹 git配置.   (master)  master主分支
+git status 查看当前版本库状态
+git add 文件名 把文件加入版本追踪( 加入了暂存区 ).
+git commit -m '提交的信息'  把暂存区的内容提交到本地版本库.
+git log  查看版本库的提交记录
+
+3).撤销删除文件
+删除:
+(1).工作区 直接删除
+(2).暂存区删除  git rm --cached 暂存区文件名
+(3).从仓库删除  直接删除文件 然后再提一遍.
+撤销:
+(1). 暂存区覆盖 本地工作文件. git checkout 文件名
+(2). 仓库文件覆盖 当前文件(回退)  git reset --hard commitID(提交ID)
+
+4).分支(branch)
+默认分支 是 master 是主分支.
+git branch  分支名称  创建分支
+git branch  查看分支
+git checkout develop 切换分支 develop 分支名称
+git merge 分支名称 ;  合并分支 git merge develop 在当前分支里面合并develop进来
+git branch -d 分支名称; 删除分支;
+
+```bash
+git branch develop;  //创建一个develop分支
+git branch feature; //创建一个功能分支
+git branch;//查看所有分支
+git checkout develop; //切换到develop开发分支
+git checkout feature ; //切换到 feature 功能分支
+
+git checkout master ;//切换到master主分支 
+git merge feature; //合并feature到当前的主分支
+git branch -d feature;//删除feature分支.
+
+```
+5).暂时保存代码
+临时保存当前分支的修改: git stash
+恢复临时保存的修改: git stash pop
+
+6).git线上仓库(git服务器).
+开源免费仓库:
+https://github.com/   
+https://gitee.com/  码云
+(1)登录
+(2)建立一个线上仓库
+(3)检查用户名 和 邮箱 git config --list 
+(4)初始化 git init 
+(5)添加仓库的服务器地址 git remote add origin https://gitee.com/kklp2020/gz2077git1.git
+(6)推送本地代码到git服务器(本地仓库有代码) 
+git add  xxx
+git commit -m 'xxx'
+git push origin master 
+
+7).修改密码
+在设置里面搜索 凭据管理器
+
+
+
+8).冲突.
+git push origin master 把本地代码推送到git服务器（错误）
+git pull origin master 把远程代码拉到本地(把代码下载本地并自动合并)
+手动修改代码
+修改完成之后 git add xx.txt git commit xx.txt git push origin master 重新提交一次
+
+9).现有的库
+git clone git仓库地址; //克隆远端数据仓库到本地
+git pull origin master 把远程仓库的代码拉取到本地自动合并.
+冲突问题;参考08)冲突处理
+注意:再开中，随机保持自己的代码是最新的... 时不时的每天最好 git pull .  每天下班的时候最好 git push 
+账号: 657052495@qq.com
+密码: **********     admin88991111
+
+10).跨团队合作（跨库）.
+(1). 一个项目(一个版本库.) 不会公开每个人有权限操作.
+(2).但是可以创建一个副本(fork 把别人库 复制一个副本给自己.)
+(3).修改我的副本，发起一个pull request [请求合并 把自己副本请求合并到主库.]
+
+
+
+
+
+
+注意: 新建文件夹 或 用户名 密码 都不要出现中文.
+
+
+作业:
+把之前写的代码，上传到 gitee 或 github上面. 至少两个库.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
